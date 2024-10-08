@@ -1,0 +1,35 @@
+
+
+<plugin>
+<groupId>org.asciidoctor</groupId>
+<artifactId>asciidoctor-maven-plugin</artifactId>
+<version>${asciidoctor.plugin.version}</version>
+<executions>
+    <execution>
+        <id>generate-docs</id>
+        <phase>prepare-package</phase>
+        <goals>
+            <goal>process-asciidoc</goal>
+        </goals>
+        <configuration>
+            <backend>html</backend>
+            <doctype>book</doctype>
+            <attributes>
+                <snippets>${project.build.directory}/generated-snippets</snippets>
+            </attributes>
+        </configuration>
+    </execution>
+</executions>
+</plugin>
+
+        <!-- Maven -->
+<dependency>
+<groupId>org.springframework.restdocs</groupId>
+<artifactId>spring-restdocs-mockmvc</artifactId>
+<version>${spring-restdocs.version}</version>
+<scope>test</scope>
+</dependency>
+
+
+//Gradle
+testImplementaion 'org.springframework.restdoc:spring-restdocs-mockmvc'
